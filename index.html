@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego del Ahorcado</title>
+
+
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body class="container-main">
+<div class="container-fluid" >
+
+    <div class="row mt-3 ms-3">
+        <div class="col-md-5">
+            <canvas id="canvasDibujo" width="500" height="600" class="canvas-dibujo"></canvas>
+        </div>
+        <div class="col-md-7">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p style="font-size: x-large; text-align: end">Seleccionar Categoria: </p>
+                </div>
+                <div class="col-md-4" >
+                    <select id="selectCategoria" class="form-control" style="text-align: start">
+                        <option value="Profesiones">Profesiones</option>
+                        <option value="Peliculas">Peliculas</option>
+                        <option value="Colores">Colores</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-danger" id="asignarCategoria" >
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <p style="font-size: x-large">Intentos disponibles: <span id="intentosDisponiblesElemnt">0</span></p>
+                </div>
+
+                <div class="col-md-4">
+                    <p style="font-size: x-large">Juegos Ganados:  <span id="juegosGanadosElement">0</span></p>
+                </div>
+                <div class="col-md-4">
+                    <p style="font-size: x-large">Juegos Perdidos:  <span id="juegosPerdidosElement">0</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <button class=" m-3 btn btn-danger" id="btnIniciarJuego">
+                        Reniciar Juego
+                    </button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p id="palabraSecreta"> _ _ _ _ _</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div id="letras">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal Ganado -->
+<div class="modal fade" id="modalGanado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-content-custom">
+
+            <div class="modal-body modal-body-custom">
+                <h3 class="text-center">
+                    Haz Ganado
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal Perdido -->
+<div class="modal fade" id="modalPerdido" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-content-custom">
+
+            <div class="modal-body modal-body-custom">
+                <h3 class="text-center">
+                    Haz Perdido la palabra es: <br> <b id="modalPerdidoPS"></b>
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="./vendor/jquery-3.7.1.min.js"></script>
+<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="./js/ahorcado.js"></script>
+
+</body>
+</html>
